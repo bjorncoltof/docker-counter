@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcCounter.Protos";
+
+package Counter;
+
+service CounterService {
+	rpc GetCounterValue (GetCounterRequest) returns (GetCounterResponse);
+}
+
+message GetCounterRequest {
+	string RequestId = 1;
+}
+
+message GetCounterResponse {
+	int32 Value = 1;
+}
